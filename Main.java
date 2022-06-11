@@ -9,20 +9,32 @@ class Main {
   public static void main(String[] args) {
     Scanner scn = new Scanner(System.in);
 
-    String schedule = "";
     System.out.print("How much free time do you have today? (in minutes) ");
     int time = scn.nextInt();
+    System.out.println();
+
+    String schedule = plan(time);
+
+    System.out.println(schedule);
+  }
+
+  public static String plan(int time) {
+    Scanner scn = new Scanner(System.in);
+    String schedule = "";
     
     int i = 0;
     while (time > 0) {
       System.out.print("Activity " + (i + 1) + ": ");
-      String activity = scn.next();
+      String activity = scn.nextLine();
       System.out.print("Amount of time? ");
       int min = scn.nextInt();
+
+      schedule += activity + ": " + min +"\n";
 
       time =- min;
       i++;
     }
+    return schedule;
   }
 
   /*
