@@ -8,15 +8,19 @@ import java.util.ArrayList;
 class Main {
   public static void main(String[] args) {
     Scanner scn = new Scanner(System.in);
-    ArrayList<String> activities = new ArrayList<String>();
-    
+
+    String schedule = "";
     System.out.print("How much free time do you have today? (in minutes) ");
     int time = scn.nextInt();
     
     int i = 0;
-    while (time < 0) {
-      System.out.print("Activity " + i + 1 + ": ");
-      activities = scn.next();
+    while (time > 0) {
+      System.out.print("Activity " + (i + 1) + ": ");
+      String activity = scn.next();
+      System.out.print("Amount of time? ");
+      int min = scn.nextInt();
+
+      time =- min;
       i++;
     }
   }
