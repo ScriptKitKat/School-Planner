@@ -14,7 +14,7 @@ class Main {
     System.out.println();
 
     String schedule = plan(time);
-
+    
     System.out.println(schedule);
   }
 
@@ -30,16 +30,18 @@ class Main {
       int min = scn.nextInt();
 
       schedule += activity + ": " + min +"\n";
+      time -= min;
 
-      time =- min;
+      System.out.println(time);
       i++;
+      System.out.println();
     }
     return schedule;
   }
 
   /*
     The idea:
-    Asks for amount of free time.
+    --Asks for amount of free time--
     Asks for assignments and he amount of time it takes
     Makes a schedule
 
@@ -47,6 +49,7 @@ class Main {
     - Make it look fancy
     - Add priority to list
     - Add try-catch for user input
+    - Object oreinted? 
     - Saves it onto a ledger so it can update if they come later (this is only if we have A LOT of time)
   */
 }
